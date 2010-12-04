@@ -7,7 +7,7 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+		"/"(uri:"/grooxdoo/source/index.html")
 		"500"(view:'/error')
 	}
 }
