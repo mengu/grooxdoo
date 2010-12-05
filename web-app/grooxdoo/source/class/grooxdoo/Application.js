@@ -68,7 +68,11 @@ qx.Class.define("grooxdoo.Application",
 
       // Add an event listener
       button1.addListener("execute", function(e) {
-        alert("Hello World!");
+        var req = new qx.io.remote.Request("/grooxdoo/index", "GET", "text/plain");
+        req.addListener("completed", function(e){
+          alert(e.getContent());
+        });
+        req.send();
       });
     }
   }
