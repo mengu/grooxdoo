@@ -32,18 +32,17 @@
   "let" :
   {
     "APPLICATION"  : "grooxdoo",
-    "QOOXDOO_PATH" : "../qooxdoo-1.2.1",
+    "QOOXDOO_PATH" : "/home/mengu/projects/grails/grooxdoo/web-app/qooxdoo-1.2.1",
     "QXTHEME"      : "grooxdoo.theme.Theme",
     "API_EXCLUDE"  : ["qx.test.*", "${APPLICATION}.theme.*", "${APPLICATION}.test.*"],
     "LOCALES"      : [ "en" ],
     "CACHE"        : "${TMPDIR}/cache",
     "ROOT"         : "."
-  }
+  },
 
   // You only need to edit the remainder of this file, if you want to customize
   // specific jobs, or add own job definitions.
 
-  /*
   "jobs" :
   {
     // Uncomment the following entry to add a contrib or library to your
@@ -55,15 +54,22 @@
       "library" :
       [
         {
-          "manifest" : "contrib://SkeletonApplication/trunk/Manifest.json"
+            // the uri settings for qx libs in the libInfo var.
+            "manifest" : "${QOOXDOO_PATH}/framework/Manifest.json",
+            "uri"      : "/grooxdoo/qooxdoo-1.2.1/framework"
+        },
+        {
+            // the uri settings for grooxdoo app itself in the libInfo var.
+	        "uri"      : "/grooxdoo/grooxdoo",
+            "manifest" : "/home/mengu/projects/grails/grooxdoo/web-app/grooxdoo/Manifest.json"
         }
       ]
-    },
+    }
 
     // If you want to tweak a job setting, see the following sample where
     // the "format" feature of the "build-script" job is overridden.
     // To see a list of available jobs, invoke 'generate.py x'.
-    "build-script" :
+    /*"build-script" :
     {
       "compile-options" : 
       {
@@ -72,7 +78,6 @@
           "format" : false
         }
       }
-    }
+    }*/
   }
-  */
 }
